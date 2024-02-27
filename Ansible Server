@@ -1,0 +1,25 @@
+Ansible Server
+
+Manually Deploy Ansible server from AWS Console on RedHat 9.x OS
+
+Create EC2 Instance:
+Launch instances
+Name and tags: ansible-server
+Select RedHat AMI (Red Hat Enterprise Linux 9 (HVM), SSD Volume Type
+Instance type: t2.medium
+Select Key pair (login)
+Select existing security group
+Configure storage: 20GB gp3
+Advanced details: IAM instance profile (select IAM role)
+
+User Data:
+#!/bin/bash
+yum install pip -y
+pip install ansible
+ln -sf /usr/local/bin/ansible /usr/bin/ansible
+sudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
+
+Verification commands after Installation, setup, and configuration:
+python -V
+pip -V
+ansible --version
