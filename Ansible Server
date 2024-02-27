@@ -19,7 +19,7 @@ pip install ansible
 ln -sf /usr/local/bin/ansible /usr/bin/ansible
 sudo dnf install -y https://s3.amazonaws.com/ec2-downloads-windows/SSMAgent/latest/linux_amd64/amazon-ssm-agent.rpm
 
-Verification commands after Installation, setup, and configuration:
+Verification commands after Installation:
 python -V
 pip -V
 ansible --version
